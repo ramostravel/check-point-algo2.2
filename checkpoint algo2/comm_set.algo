@@ -1,0 +1,22 @@
+ALGORITHM sets_comm
+VAR
+    array set1:array of INTEGER [10];
+    array set2:array of INTEGER [10];
+    array com:array of INTEGER [10];
+    i,j,sum:=0:INTEGER;
+BEGIN
+    write("enter set1")
+    read(set1)
+    write("enter set2")
+    read(set2)
+    for i from 0 to 9 do 
+      for j from 0 to 9 do
+        if (set1[i]!=set2[j])
+         sum:=sum+set1[i];
+         com.push(set1[i],set2[j]);
+        end_if; 
+      end_for;
+    end_for;  
+ write ("the commun elements ",com);
+ write ("sum of commun elements ",sum);      
+END

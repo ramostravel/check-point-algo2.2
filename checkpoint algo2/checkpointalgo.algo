@@ -1,0 +1,138 @@
+ALGORITHM checkpointalgo
+VAR
+    str:STRING;
+    i,a,b ,n:INTEGER;
+    
+BEGIN
+  repeat
+    write("enter a sentence")
+    read(str)
+    
+  until (str[str.length]='.')
+  n:=str.length;
+  write(n)
+  a=b:=0;
+  i=1;
+  for i from 1 to n do 
+    if (str[i]='') then
+       a:=a+1;
+    end_if
+    switch (str[i]) do
+       case 'a':
+       case 'e':
+       case 'i':
+       case 'o':
+       case 'u':
+       b:=b+1;
+       break;
+       default:
+    end_switch
+    write(a)
+    write(b)
+  end_for
+END
+ALGORITHM sets_comm
+VAR
+    array set1:array of INTEGER [10];
+    array set2:array of INTEGER [10];
+    array com:array of INTEGER [10];
+    i,j,sum:=0:INTEGER;
+BEGIN
+    write("enter set1")
+    read(set1)
+    write("enter set2")
+    read(set2)
+    for i from 0 to 9 do 
+      for j from 0 to 9 do
+        if (set1[i]!=set2[j])
+         sum:=sum+set1[i];
+         com.push(set1[i],set2[j]);
+        end_if; 
+      end_for;
+    end_for;  
+ write ("the commun elements ",com);
+ write ("sum of commun elements ",sum);      
+END
+ALGORITHM hashtable_diff
+VAR
+    htab1 : HASH_TABLE<INTEGER,STRING>;
+    htab2 : HASH_TABLE<INTEGER,STRING>;
+    array diff:array of INTEGER [10];
+    i,j,sum : INTEGER;
+BEGIN
+    write("enter htab1")
+    htab1.insert(0,"zero");
+    htab1.insert(1,"un");
+    htab1.insert(2,"deux");
+    htab1.insert(3,"trois");
+    htab1.insert(4,"quatre");
+    write("enter htab2")
+    htab2.insert(0,"zero");
+    htab2.insert(3,"trois");
+    htab2.insert(5,"cinq");
+    htab2.insert(3,"trois");
+    htab2.insert(6,"six");
+
+    FOR i FROM 0 TO 9  DO
+        FOR j FROM 0 TO 9  DO
+           IF (htab1[i] != htab2[j]) THEN
+             diff.push(htab1[i],htab2[j]);
+             sum:=sum+htab1[i];
+            END_IF
+        END_FOR
+    END_FOR
+    write ("the different elements are",diff);
+    write ("sum of different elements is",sum);   
+END
+ALGORITHM sets_diff
+VAR
+    array set1:array of INTEGER [10];
+    array set2:array of INTEGER [10];
+    array dist:array of INTEGER [10];
+    i,j,sum:=0:INTEGER;
+BEGIN
+    write("enter set1")
+    read(set1)
+    write("enter set2")
+    read(set2)
+    for i from 0 to 9 do 
+      for j from 0 to 9 do
+        if (set1[i]!=set2[j])
+         sum:=sum+set1[i];
+         dist.push(set1[i],set2[j]);
+        end_if; 
+      end_for;
+    end_for;    
+ write ("the commun elements are",comm);
+ write ("sum of commun elements is",sum);     
+END
+ALGORITHM set_hashttable
+VAR
+    tab1 : HASH_TABLE<INTEGER,STRING>;
+    tab2 : HASH_TABLE<INTEGER,STRING>;
+    i,j,count : INTEGER;
+BEGIN
+   
+    write("enter htab1")
+    tab1.insert(0,"zero");
+    tab1.insert(1,"un");
+    tab1.insert(2,"deux");
+    tab1.insert(3,"trois");
+    tab1.insert(4,"quatre");
+    write("enter htab2")
+    tab2.insert(0,"zero");
+    tab2.insert(1,"trois");
+    tab2.insert(2,"deux");
+    tab2.insert(3,"trois");
+    tab2.insert(4,"quatre");
+  
+   FOR i FROM 0 TO 9  DO
+    FOR i FROM 0 TO 9  DO
+       IF (tab1[i] = tab2[j]) THEN
+           count := tab.get(str[i]);
+           htab.insert(str[i],count+1);
+       ELSE
+           htab.insert(str[i],1);
+       END_IF
+   END_FOR
+END
